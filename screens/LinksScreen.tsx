@@ -11,6 +11,7 @@ const data = new Array(100).fill(0).map( () => ({
 
 export default function LinksScreen() {
   return (
+    // <View>
       <ScrollView style={styles.container}>
         <Text style={styles.title}>Page content</Text>
         <View style={{ maxWidth: 720 }}>
@@ -23,6 +24,7 @@ export default function LinksScreen() {
           ) ) }
         </View>
       </ScrollView>
+    // </View>
   );
 }
 
@@ -32,13 +34,13 @@ LinksScreen.navigationOptions = {
 
 const styles = StyleSheet.create({
   title: {
+    margin: 0,
     padding: 15,
     backgroundColor: '#eee',
     fontSize: 20
   },
   container: {
     flex: 1,
-    paddingTop: 15,
     backgroundColor: '#fff',
   },
   listItem: {

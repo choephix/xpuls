@@ -10,6 +10,8 @@ import {
   View,
 } from 'react-native';
 
+import Colors from '../constants/Colors';
+
 import { MonoText } from '../components/StyledText';
 
 export default function HomeScreen() {
@@ -111,7 +113,7 @@ function handleHelpPress() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#224',
   },
   developmentModeText: {
     marginBottom: 20,
@@ -173,12 +175,12 @@ const styles = StyleSheet.create({
       },
     }),
     alignItems: 'center',
-    backgroundColor: '#fbfbfb',
+    backgroundColor: '#335',
     paddingVertical: 20,
   },
   tabBarInfoText: {
     fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
+    color: 'white',
     textAlign: 'center',
   },
   navigationFilename: {
@@ -193,6 +195,6 @@ const styles = StyleSheet.create({
   },
   helpLinkText: {
     fontSize: 14,
-    color: '#2e78b7',
+    color: Colors.tintColor,
   },
 });

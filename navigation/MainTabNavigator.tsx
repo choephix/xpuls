@@ -6,6 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import Colors from '../constants/Colors';
 
 type TabBarIconProps = { focused?: boolean };
 
@@ -32,7 +33,8 @@ HomeStack.navigationOptions = {
           : 'md-information-circle'
       }
     />
-  )
+  ),
+  
 };
 
 HomeStack.path = '';
@@ -47,7 +49,7 @@ const LinksStack = createStackNavigator(
 LinksStack.navigationOptions = {
   tabBarLabel: 'Links',
   tabBarIcon: ({ focused }: TabBarIconProps) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-appstore'} />
+    <TabBarIcon focused={ focused } name={Platform.OS === 'ios' ? 'ios-link' : 'md-appstore'} />
   )
 };
 
@@ -63,17 +65,28 @@ const SettingsStack = createStackNavigator(
 SettingsStack.navigationOptions = {
   tabBarLabel: 'Settings',
   tabBarIcon: ({ focused }: TabBarIconProps) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+    <TabBarIcon focused={ focused } name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
   )
 };
 
 SettingsStack.path = '';
 
-const tabNavigator: any = createBottomTabNavigator({
-  LinksStack,
-  HomeStack,
-  SettingsStack
-});
+const tabNavigator: any = createBottomTabNavigator(
+  {
+    LinksStack,
+    HomeStack,
+    SettingsStack
+  }, { 
+    tabBarOptions: { 
+      activeBackgroundColor: Colors.bg2,
+      inactiveBackgroundColor: Colors.bg2,
+      activeTintColor: Colors.tabIconSelected,
+      // inactiveTintColor: Colors.bg2,
+      style: {
+        borderColor: Colors.bg0,
+      }
+    } 
+  } );
 
 tabNavigator.path = '';
 

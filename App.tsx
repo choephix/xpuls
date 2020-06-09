@@ -3,7 +3,7 @@ import { AppLoading } from 'expo';
 import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
 import React, { useState } from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { SafeAreaView, Platform, StatusBar, StyleSheet, View } from 'react-native';
 import AppNavigator from './navigation/AppNavigator';
 
 type BaseProps = {
@@ -23,10 +23,10 @@ export const App: React.FC<BaseProps> = props => {
     );
   }
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {Platform.OS === 'ios' && <StatusBar barStyle='default' />}
       <AppNavigator />
-    </View>
+    </SafeAreaView>
   );
 };
 
